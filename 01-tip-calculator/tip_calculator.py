@@ -1,7 +1,7 @@
 
-def divisionEntera(dividendo:float ,divisor:int=0)-> float:
+def division(dividendo:float ,divisor:int=0)-> float:
     """
-    Realiza una division entera entre un dividendo y un divisor, asegurando que ambos numeros sean validos y el resultado sea redondeado a dos decimales.
+    Realiza una division entre un dividendo y un divisor, asegurando que ambos numeros sean validos y el resultado sea redondeado a dos decimales.
 
     Este metodo realiza una division entre el `dividendo` y el `divisor`, asegurandose de que:
     1. El `dividendo` sea un valor positivo.
@@ -21,16 +21,16 @@ def divisionEntera(dividendo:float ,divisor:int=0)-> float:
         ValueError: Si el `divisor` es negativo o igual a cero.
 
     Ejemplos:
-        >>> divisionEntera(10.0, 2)
+        >>> division(10.0, 2)
         5.0
 
-        >>> divisionEntera(10.0, 3)
+        >>> division(10.0, 3)
         3.33
 
-        >>> divisionEntera(-5.0, 2)
+        >>> division(-5.0, 2)
         ValueError: El dividendo no puede ser negativo
 
-        >>> divisionEntera(10.0, 0)
+        >>> division(10.0, 0)
         ValueError: El divisor no puede ser negativo o cero
     """
 
@@ -66,16 +66,39 @@ def validarNumeroPersona(numero_personas:int)->bool:
 
 if __name__ == "__main__":
     print("\n\tCalculator Tip\n")
-    monto= input("Inserte la cuenta a pagar:")
+    monto= input("Inserte la cuenta a pagar: ")
     monto = validarCuenta(monto)
     
     is_personas_validada = False
 
     while not is_personas_validada:
-        personas= int(input("\nIntroduzca el numero de personas"))
+        personas= int(input("\nIntroduzca el numero de personas: "))
         if validarNumeroPersona(personas):
             is_personas_validada = True
         else:
-            print((f"El valor {personas} no es valido para el numero de personas\n"))
+            print(f"El valor {personas} no es valido para el numero de personas\n")
 
-    print("Hecho!")
+    print((
+        "Resumen:"
+        f"\n\tCuenta:         {monto}€"
+        f"\n\tPersonas:       {personas}"
+        "\n\t-----------------------------------"
+        f"\n\t€ por persona:  {division(monto, personas)}"
+        "\nCuanta propina quereis dar? (minimo 5%)"
+        "\nSugerencias de propina: 12, 15 ,20%"
+    ))
+    propina= float(input("\nIndique propina: ")) 
+    while propina< 5:
+        print("La propina minima es 5%.")
+        propina= float(input("\nPor favor indique una propina: "))
+    
+    propina = propina*monto/100
+
+    print((
+    "\n\nResultado:"
+    f"\n\tCuenta:         {monto}€"
+    f"\n\tPersonas:       {personas}"
+    f"\n\tPropina:        {propina}"
+    "\n\t-----------------------------------"
+    f"\n\t€ por persona:  {division(monto+propina, personas)}"
+    ))
