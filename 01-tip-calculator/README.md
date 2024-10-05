@@ -28,6 +28,7 @@ python tip_calculator.py
 ```
 
 ## Diagrama
+```mermaid
 graph TD;
     A[Inicio] --> B[Validar Monto de la Cuenta];
     B --> C{Monto Válido?};
@@ -41,7 +42,7 @@ graph TD;
     J -- No --> K[Solicitar de nuevo Propina];
     J -- Sí --> L[Calcular Monto Total por Persona];
     L --> M[Mostrar Resultado Final];
-
+```
 
 ## Ejemplo de uso
 ``` 
