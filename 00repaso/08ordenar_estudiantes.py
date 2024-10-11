@@ -47,8 +47,11 @@ estudiantes = {
 }
 
 # 1. Ordenar a los estudiantes por sus calificaciones de mayor a menor usando sorted() y una función lambda
+estudiantes_ordenados = sorted(estudiantes, key= lambda estudiante: (estudiante, estudiantes[estudiante]))
+print(f"Estudiantes ordenados\n{estudiantes_ordenados}")
 
 # 2. Filtrar estudiantes con calificaciones mayores a 80 usando filter() y una función lambda
+
 
 # 3. Calcular el promedio de calificaciones usando reduce()
 
