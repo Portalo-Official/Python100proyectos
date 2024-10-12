@@ -1,3 +1,4 @@
+from functools import reduce
 """
 Ejercicio: Ordenar un Diccionario de Estudiantes por Calificaciones
 
@@ -42,17 +43,20 @@ estudiantes = {
     "Juan": 85,
     "María": 92,
     "Pedro": 78,
+    "Piedad": 62,
     "Ana": 95,
     "Luis": 88
 }
 
 # 1. Ordenar a los estudiantes por sus calificaciones de mayor a menor usando sorted() y una función lambda
-estudiantes_ordenados = sorted(estudiantes, key= lambda estudiante: (estudiante, estudiantes[estudiante]))
+estudiantes_ordenados = sorted(estudiantes.items(), key= lambda x: x[1], reverse=True)
 print(f"Estudiantes ordenados\n{estudiantes_ordenados}")
 
 # 2. Filtrar estudiantes con calificaciones mayores a 80 usando filter() y una función lambda
-
+estudiantes_mayor_80 = list(filter(lambda x: x[1]>80, estudiantes.items()))
+print(f"Estudiantes con puntuacion amyor 80\n{estudiantes_mayor_80}")
 
 # 3. Calcular el promedio de calificaciones usando reduce()
+
 
 # 4. Encontrar el estudiante con la calificación más baja usando min() y una función lambda
