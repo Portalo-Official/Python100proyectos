@@ -8,16 +8,24 @@ NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 SYMBOLS = [ '_', '-', '@', '!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 
-
-
-
-
 if __name__ == "__main__":
-    len_password = int(input("Cuantas letras quieres: "))
+    num_letters = int(input("Cuantas letras quieres: "))
     num_symbols = int(input("Cuantos simbolos quieres: "))
     num_numbers = int(input("Cuantos números quieres: "))
     
     password = list()
+    # Con sample() cogemos valores sin que se repuitan
+    # symbols = rnd.sample(SYMBOLS, num_symbols)
+    # letters = rnd.sample(LETTERS, num_letters)
+    # numbers = rnd.sample(NUMBERS, num_numbers)
 
-    symbols = [rnd.sample(SYMBOLS) for _ in range()]
-    
+    symbols = [rnd.choice(SYMBOLS) for _ in range(num_symbols)]
+    letters = [rnd.choice(LETTERS) for _ in range(num_letters)]
+    numbers = [rnd.choice(NUMBERS) for _ in range(num_numbers)]
+
+    password.extend(letters)
+    password.extend(symbols)
+    password.extend(numbers)
+
+    rnd.shuffle(password)
+    print(f"Su contraseña es: {''.join(password)}")
