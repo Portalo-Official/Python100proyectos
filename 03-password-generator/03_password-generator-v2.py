@@ -43,6 +43,6 @@ if __name__ == "__main__":
     password.extend(symbols)
     password.extend(numbers)
     
-    print(password)
+    # print(password)
     desordenarLista(password)
     print(f"Su contraseña es: {''.join(password)}")
