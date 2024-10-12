@@ -13,8 +13,11 @@ SYMBOLS = [ '_', '-', '@', '!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 
 if __name__ == "__main__":
-
     len_password = int(input("Cuantas letras quieres: "))
     num_symbols = int(input("Cuantos simbolos quieres: "))
     num_numbers = int(input("Cuantos números quieres: "))
+    
+    password = list()
 
+    symbols = [rnd.sample(SYMBOLS) for _ in range()]
+    

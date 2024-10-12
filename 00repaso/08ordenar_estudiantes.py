@@ -57,7 +57,7 @@ estudiantes_mayor_80 = list(filter(lambda x: x[1]>80, estudiantes.items()))
 print(f"Estudiantes con puntuacion amyor 80\n{estudiantes_mayor_80}")
 
 # 3. Calcular el promedio de calificaciones usando reduce()
-sumatorio_notas = reduce(lambda sum, x: sum + x[1], estudiantes.items(), 0) 
+sumatorio_notas = reduce(lambda total, x: total + x[1], estudiantes.items(), 0) 
 promedio_notas = sumatorio_notas / len(estudiantes)
 print(f"Promedio de calificaciones:\n{round(promedio_notas, 2)}")
 # 4. Encontrar el estudiante con la calificación más baja usando min() y una función lambda
