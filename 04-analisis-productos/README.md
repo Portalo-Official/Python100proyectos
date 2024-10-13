@@ -49,7 +49,7 @@ productos_datos = [
     ("Refrigerador", 15, 2200),
     ("Lavadora", 10, 1800)
 ]
-
+```
 ## Requisitos del Sistema:
 
 - Python 3.x
