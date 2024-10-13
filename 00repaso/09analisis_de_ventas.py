@@ -26,11 +26,18 @@ ventas = [
 ]
 
 # 1. Calcular el total de ingresos por cada vendedor usando map() y una función lambda.
-total_ingresos = list(map(lambda venta: (venta[0],venta[1]*venta[2]), ventas))
-print(total_ingresos)
+ingresos = list(map(lambda venta: (venta[0],venta[1]*venta[2]), ventas))
+print("\nIngresos por vendedor")
+print(ingresos)
 
-# 2. Filtrar las ventas que superen un umbral de ingresos totales usando filter().
+# 2. Filtrar las ventas que superen el umbral de 2500 de ingreso totales usando filter().
+ingresos_superior_2500 = list(filter(lambda ingreso: ingreso[1]>2500, ingresos))
+print("\nIngresos mayores que 2500:")
+print(ingresos_superior_2500)
 
 # 3. Calcular los ingresos totales de todos los vendedores usando reduce().
+total_ingresos= reduce(lambda total,ingreso: total+ ingreso[1],ingresos, 0)
+print("\nTotal de ingresos:")
+print(total_ingresos)
 
 # 4. Encontrar al vendedor con los ingresos más altos usando max() y una función lambda.
