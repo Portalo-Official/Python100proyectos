@@ -63,11 +63,11 @@ productos_datos = [
 
 2. Navega al directorio del proyecto:
 
-   cd tu_repositorio
+   cd yourPath/Python100proyectos/04-analisis-productos
 
 3. Ejecuta el script principal:
 
-   python main.py
+   python 04analisis_productos.py
 
 ## Autor:
 - Nombre: Santiago Miguez
