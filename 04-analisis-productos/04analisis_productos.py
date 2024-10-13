@@ -37,3 +37,6 @@ Soluciones de salida:
  5.
   Producto más vendido: ('Memoria USB', 300)
 """
+from productos import productos_datos as data
+
+print(data)
