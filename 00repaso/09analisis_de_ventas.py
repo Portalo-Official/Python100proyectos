@@ -41,3 +41,5 @@ print("\nTotal de ingresos:")
 print(total_ingresos)
 
 # 4. Encontrar al vendedor con los ingresos más altos usando max() y una función lambda.
+maximo_ingreso= max(ingresos, key=lambda x: x[1])
+print(f"\nVendedor con mayor ingreso: {maximo_ingreso}")
