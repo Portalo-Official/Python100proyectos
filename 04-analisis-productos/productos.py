@@ -1,8 +1,16 @@
-#  producto , cantiad_vendida, precio
+"""
+Este módulo contiene una lista de productos junto con su cantidad vendida y el precio.
+La lista `productos_datos` tiene la siguiente estructura:
+
+nombre_producto, cantidad_vendida, precio
+
+- nombre_producto (str): El nombre del producto vendido.
+- cantidad_vendida (int): La cantidad de unidades vendidas de ese producto.
+- precio (float): El precio unitario del producto en dólares.
+
+Lista de productos:
+"""
 productos_datos = [
-    """
-    nombre_producto, cantidad_vendida, precio
-    """
     ("Laptop", 25, 1200),
     ("Smartphone", 80, 800),
     ("Tablet", 50, 600),
