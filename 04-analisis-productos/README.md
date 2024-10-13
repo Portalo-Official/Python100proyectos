@@ -59,7 +59,7 @@ productos_datos = [
 
 1. Clona este repositorio:
 
-   git clone https://github.com/tu_usuario/tu_repositorio.git
+   git clone https://github.com/Portalo-Official/Python100proyectos.git
 
 2. Navega al directorio del proyecto:
 
