@@ -1,4 +1,6 @@
 """
+Ventas de productos.
+
 Tareas del ejercicio:
 
 1. Calcular el precio total por producto: Para cada producto, calcula el total 
@@ -39,4 +41,11 @@ Soluciones de salida:
 """
 from productos import productos_datos as data
 
-print(data)
+
+# 1. Calcular el precio total por producto: Para cada producto, calcula el total 
+#    multiplicando la cantidad vendida por el precio por unidad. Usa map()
+total_por_producto = list(map(lambda x: (x[0],x[1]*x[2]), data))
+print(f"La venta por producto es {total_por_producto}")
+
+#2. Filtra aquellos productos cuyo total (cantidad * precio) 
+#  sea superior a 10,000 usando filter() y una función lambda.
