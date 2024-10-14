@@ -46,15 +46,20 @@ from productos import productos_datos as data
 # 1. Calcular el precio total por producto: Para cada producto, calcula el total 
 #    multiplicando la cantidad vendida por el precio por unidad. Usa map()
 total_por_producto = list(map(lambda x: (x[0],x[1]*x[2]), data))
-# print(f"La venta por producto es {total_por_producto}")
+# print(f"\nLa venta por producto es {total_por_producto}")
 
 #2. Filtra aquellos productos cuyo total (cantidad * precio) 
 #  sea superior a 10,000 usando filter() y una función lambda.
 prodcutos_mayor_10_000 = list(filter(lambda x: x[1]>10_000, total_por_producto))
-print(f"Productos matyores a 10000\n{prodcutos_mayor_10_000}")
+print(f"\nProductos matyores a 10000\n{prodcutos_mayor_10_000}")
 
 # 3. Calcular el total de todos los productos vendidos: Suma el total de todas las ventas
 #   (cantidad * precio) de todos los productos combinados. Usa reduce() para este cálculo.
 total_productos_vendidos= reduce(lambda y,x: y+x[1], total_por_producto, 0)
-print(f"Total de ingresos: {total_productos_vendidos}")
+print(f"\nTotal de ingresos: {total_productos_vendidos}")
+
+# 4. Encontrar el producto más caro: Encuentra el producto con el precio más alto por unidad
+#    utilizando max() y una función lambda.
+producto_mas_caro = max(data, key=lambda x: x[2])
+print(f"\nProducto mas caro {producto_mas_caro}")
 
