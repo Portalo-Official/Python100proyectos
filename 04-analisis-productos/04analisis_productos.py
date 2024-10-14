@@ -39,6 +39,7 @@ Soluciones de salida:
  5.
   Producto más vendido: ('Memoria USB', 300)
 """
+from functools import reduce
 from productos import productos_datos as data
 
 
@@ -52,4 +53,8 @@ total_por_producto = list(map(lambda x: (x[0],x[1]*x[2]), data))
 prodcutos_mayor_10_000 = list(filter(lambda x: x[1]>10_000, total_por_producto))
 print(f"Productos matyores a 10000\n{prodcutos_mayor_10_000}")
 
+# 3. Calcular el total de todos los productos vendidos: Suma el total de todas las ventas
+#   (cantidad * precio) de todos los productos combinados. Usa reduce() para este cálculo.
+total_productos_vendidos= reduce(lambda y,x: y+x[1], total_por_producto, 0)
+print(f"Total de ingresos: {total_productos_vendidos}")
 
