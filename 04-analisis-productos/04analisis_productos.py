@@ -63,3 +63,7 @@ print(f"\nTotal de ingresos: {total_productos_vendidos}")
 producto_mas_caro = max(data, key=lambda x: x[2])
 print(f"\nProducto mas caro {producto_mas_caro}")
 
+# 5. Encontrar el producto más vendido (en cantidad): Encuentra el producto con la mayor
+#    cantidad vendida utilizando max() y una función lambda.
+producto_mas_vendido = max(data, key= lambda x: x[1])
+print(f"\nProducto mas vendido {producto_mas_vendido}")
