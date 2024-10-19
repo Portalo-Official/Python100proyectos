@@ -5,6 +5,13 @@ class Producto():
         self._cantidad_disponible = cantidad_disponible
         self._precio_unidad= precio_unidad
 
+    def venta(self, cantidad_vendida:int=0)-> bool:
+        if cantidad_vendida <=self.cantidad_disponible and (not cantidad_vendida <= 0):
+            self.cantidad_disponible -= cantidad_vendida
+            return True
+        else:
+            return False
+
     @property
     def nombre(self):
         return self._nombre
